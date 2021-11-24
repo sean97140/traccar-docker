@@ -7,7 +7,7 @@ WORKDIR /opt/traccar
 COPY traccar*.zip /tmp/
 
 RUN set -ex && \
-    unzip -qo /tmp/traccar-linux-64-*.zip -d /opt/traccar && \
+    unzip -qo /tmp/traccar*.zip -d /opt/traccar && \
     rm -rf /var/lib/apt/lists/* /tmp/*
 
 ENTRYPOINT ["java", "-Xms512m", "-Xmx512m", "-Djava.net.preferIPv4Stack=true"]
