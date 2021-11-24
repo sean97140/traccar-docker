@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot-focal
+FROM public.ecr.aws/socar/adoptopenjdk/openjdk11:alpine-jre-11.0.10_9
 
 ENV TRACCAR_VERSION 4.14
 
