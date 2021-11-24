@@ -4,10 +4,12 @@ ENV TRACCAR_VERSION 4.14
 
 WORKDIR /opt/traccar
 
+COPY traccar*.zip /tmp/
+
 RUN set -ex && \
     apt-get update &&\
     TERM=xterm DEBIAN_FRONTEND=noninteractive apt-get install --yes --no-install-recommends unzip wget && \
-    unzip -qo traccar-linux-64-*.zip -d /opt/traccar && \
+    unzip -qo /tmp/traccar-linux-64-*.zip -d /opt/traccar && \
     apt-get autoremove --yes unzip wget && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/*
